@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flow12
+  namespace: namespace-workflow-1724873339451
+  labels:
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app: flow12
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000

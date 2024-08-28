@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flow12
+  labels:
+    app: flow12
+    kubernetes.azure.com/generator: devhub
+  namespace: namespace-workflow-1724873339451
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flow12
+  template:
+    metadata:
+      labels:
+        app: flow12
+    spec:
+      containers:
+        - name: flow12
+          image: acrworkflow1724873339451.azurecr.io/image-workflow-1724873339451:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
